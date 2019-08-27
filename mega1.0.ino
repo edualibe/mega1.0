@@ -20,9 +20,6 @@ unsigned long chequeosim_actual = 0; //almacena el tiempo en que realizara el ch
 #define RESTART asm("jmp 0x0000") //comando para reinciar el arduino
 //Fin variables manejo SIM900*************************************************************
 
-#define off 0
-#define on 1
-
 //variables para lectura de entradas analogicas conectadas a las salidas del nodemcu esp8266
 int valor_A0, valor_A1, valor_A2, valor_A3, valor_A4, valor_A5, valor_A6, valor_A7, valor_A8;
 #define entrada_analoga_0 A0
@@ -71,15 +68,15 @@ void setup() {
   pinMode(salida_7, OUTPUT);
   pinMode(salida_8, OUTPUT);
   pinMode(salida_9, OUTPUT);
-  digitalWrite(salida_1, off);
-  digitalWrite(salida_2, off);
-  digitalWrite(salida_3, off);
-  digitalWrite(salida_4, off);
-  digitalWrite(salida_5, off);
-  digitalWrite(salida_6, off);
-  digitalWrite(salida_7, off);
-  digitalWrite(salida_8, off);
-  digitalWrite(salida_9, off);
+  digitalWrite(salida_1, 0);
+  digitalWrite(salida_2, 0);
+  digitalWrite(salida_3, 0);
+  digitalWrite(salida_4, 0);
+  digitalWrite(salida_5, 0);
+  digitalWrite(salida_6, 0);
+  digitalWrite(salida_7, 0);
+  digitalWrite(salida_8, 0);
+  digitalWrite(salida_9, 0);
   pinMode(9, OUTPUT); //para encender la tarjeta sim900
   SIM900.begin(19200); //Configura velocidad del puerto serie para el SIM9000
   Serial.begin(9600);
